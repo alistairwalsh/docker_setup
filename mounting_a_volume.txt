@@ -2,15 +2,15 @@ Step Three: Mounting the Device
 
 First, create a directory where you want to mount the drive:
   
-  [root@localhost ~]# mkdir /your_new_drive_location
+  [root@localhost ~]# mkdir /home/ubuntu/data/
 
 Then simply mount the device to this location:
 
-  [root@localhost ~]# mount /dev/vdc /your_new_drive_location
+  [root@localhost ~]# mount /dev/vdb /home/ubuntu/data/
 
 When you’re done, you can unmount the drive using the following command (ensure that your current working directory isn’t inside the volume you’re unmounting or you’ll receive an error about the device being busy):
 
-  [root@localhost ~]# umount /dev/vdc
+  [root@localhost ~]# umount /dev/vdb
 
     Step Four: Making the Drive Accessible on Boot
 open the file:
@@ -19,6 +19,8 @@ sudo nano /etc/fstab
 
 and add this line - with the correct mount point:
 
-  /dev/vdc        /your_new_drive_location         ext4   defaults        1 2
+  /dev/vdb        /home/ubuntu/data/         ext4   defaults        1 2
 
 Once you’ve made the above changes, save the file and the drive will mount to the location you specified every boot (unless there is an issue).
+
+soft reboot the instance for the drive to be mounted
