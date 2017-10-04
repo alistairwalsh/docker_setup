@@ -8,9 +8,7 @@ sudo apt-get install duck
 duck --verbose --download s3://fcp-indi/data/Projects/INDI/ATLAS/R1.1/ATLAS_R1.1_encrypted.tar.gz ~/data/
 
 openssl aes-256-cbc -d -in ATLAS_R1.1_encrypted.tar.gz -out ATLAS_R1.1.tar.gz
-
 #provide encryption key
 
-tar -zxvf ATLAS_R1.1.tar.gz
-
-https://github.com/alistairwalsh/docker_setup.wiki.git
+mkdir images;mv ATLAS_R1.1.tar.gz images
+tar -zxvf images/ATLAS_R1.1.tar.gz
