@@ -1,12 +1,16 @@
 ### docker\_setup
 
-The get-docker.sh script will download and install docker. After installation, add the user 'ubuntu' to the group 'docker' with the usermod command so that docker commands can be run without the use of sudo.
+The get-docker.sh script will download and install docker.
 
 ```bash
 sh get-docker.sh
 ```
 
+ After installation, add the user 'ubuntu' to the group 'docker' with the usermod command so that docker commands can be run without the use of sudo.
+
+```bash
 sudo usermod -aG docker ubuntu
+```
 
 ### Changing dockers default storage location
 
@@ -20,4 +24,14 @@ Instructions here
 
 https://forums.docker.com/t/how-do-i-change-the-docker-image-installation-directory/1169/29
 
+To run the Nipype/Jupyter Notebook container
+
+```bash
 docker run -it --rm -p 8888:8888 oesteban/biss2016-notebook
+```
+
+add the volume to the container
+
+```bash
+docker run -it --rm -p 8888:8888 -v /home/ubuntu/data:/home/jovyan/data oesteban/biss2016-notebook
+```
