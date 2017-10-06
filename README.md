@@ -10,21 +10,11 @@ sudo usermod -aG docker ubuntu
 
 ### Changing dockers default storage location
 
-Docker containers can take up a large amount of drive space. On the nectar cloud instances, often the primary disk space is modest and docker images will quickly fill this space. The move-docker-root.sh script will perform the necessary operations to move the image store folder to an attached volume store. The script should be modified to represent your instance configuration.
-
-chmod 
-
-sudo chown docker /data
-sudo chown ubuntu /data
-
+Docker containers can take up a large amount of drive space. On the nectar cloud instances, often the primary disk space is modest and docker images will quickly fill this space. The move-docker-root.sh script will perform the necessary operations to move the image store folder to an attached volume store. Mount the volume inside your home directory, or change permissions if mounting it elsewhere. The folder paths in the script should be modified to represent your instance configuration.
 
 ```bash
 sudo move-docker-root.sh
 ```
-
-
-
-I manually ran the commands in move-docker-root.sh because it didn't seem to run properly
 
 Instructions here
 
