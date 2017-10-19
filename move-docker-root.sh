@@ -1,7 +1,7 @@
 #!/bin/bash
 #sysinfo.io
 #change paths below to suit your needs
-dockerdir_new='mnt/docker/var/'
+dockerdir_new='/home/ubuntu/data/docker/var/'
 dockerdir_old='/var/lib/docker/'
 
 set -e
